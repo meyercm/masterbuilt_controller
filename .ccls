@@ -1,0 +1,25 @@
+clang
+
+%c -std=c11
+%cpp -std=c++11
+
+-I/home/chris/projects/smoker_controller/include
+-I/home/chris/projects/smoker_controller/src
+-I/home/chris/.platformio/packages/framework-arduino-avr/cores/arduino
+-I/home/chris/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs
+-I/home/chris/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src
+-I/home/chris/.platformio/packages/framework-arduino-avr/libraries/HID/src
+-I/home/chris/.platformio/packages/framework-arduino-avr/libraries/SPI/src
+-I/home/chris/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src
+-I/home/chris/.platformio/packages/framework-arduino-avr/libraries/Wire/src
+-I/home/chris/.platformio/packages/toolchain-atmelavr/lib/gcc/avr/5.4.0/include-fixed
+-I/home/chris/.platformio/packages/toolchain-atmelavr/lib/gcc/avr/5.4.0/include
+-I/home/chris/.platformio/packages/toolchain-atmelavr/avr/include
+-I/home/chris/.platformio/packages/tool-unity
+
+-DPLATFORMIO=40304
+-DARDUINO_AVR_NANO
+-DF_CPU=16000000L
+-DARDUINO_ARCH_AVR
+-DARDUINO=10808
+-D__AVR_ATmega328P__
