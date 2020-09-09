@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <stdio.h>
 
 const int PERIOD = 10000;
 
@@ -60,7 +61,27 @@ void recompute() {
 
 void readCommand() {
   if (Serial.available() > 0) {
-    
+    String input = Serial.readStringUntil('\n'); 
+    if (input) {
+      if (sscanf(input.c_str(), "sp%i", &setpoint)) {
+        return;
+      }
+      if (sscanf(input.c_str(), "b%i", &bias)) {
+        return;
+      }
+      if (sscanf(input.c_str(), "id%f", &integral_decay)) {
+        return;
+      }
+      if (sscanf(input.c_str(), "kp%f", &k_p)) {
+        return;
+      }
+      if (sscanf(input.c_str(), "ki%f", &k_i)) {
+        return;
+      }
+      if (sscanf(input.c_str(), "kd%f", &k_d)) {
+        return;
+      }
+    }
 
   }
 }
