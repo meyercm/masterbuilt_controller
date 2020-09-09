@@ -60,6 +60,7 @@ void recompute() {
 }
 
 void readCommand() {
+  int temp;
   if (Serial.available() > 0) {
     String input = Serial.readStringUntil('\n'); 
     if (input) {
@@ -69,16 +70,20 @@ void readCommand() {
       if (sscanf(input.c_str(), "b%i", &bias)) {
         return;
       }
-      if (sscanf(input.c_str(), "id%f", &integral_decay)) {
+      if (sscanf(input.c_str(), "id%i", &temp)) {
+        integral_delay = temp / 100;
         return;
       }
-      if (sscanf(input.c_str(), "kp%f", &k_p)) {
+      if (sscanf(input.c_str(), "kp%i", &temp)) {
+        k_p = temp / 100;
         return;
       }
-      if (sscanf(input.c_str(), "ki%f", &k_i)) {
+      if (sscanf(input.c_str(), "ki%i", &temp)) {
+        k_i = temp / 100;
         return;
       }
-      if (sscanf(input.c_str(), "kd%f", &k_d)) {
+      if (sscanf(input.c_str(), "kd%i", &temp)) {
+        k_d = temp / 100;
         return;
       }
     }
