@@ -6,10 +6,11 @@ The board used was an Arduino nano, because it was the only 5V micro I had avail
 
 ### Future Work:
 
-[ ] Give it its own wifi (ESP32? but then need 5v logic and ADC)
-[ ] Simple webpage for control/status
-[ ] Add a duration to the parameters so that it shuts off automatically
-[ ] Upgrade the PID parameters to eliminate the need for a bias - I think it's overdamped
+- [ ] Give it its own wifi (ESP32? but then need 5v logic and ADC)
+- [ ] Simple webpage for control/status
+- [ ] Add a duration to the parameters so that it shuts off automatically
+- [ ] Upgrade the PID parameters to eliminate the need for a bias - I think it's overdamped
+
 
 ### Wiring:
 
@@ -24,4 +25,5 @@ I couldn't find any info online, so I did my own investigation:
 Instead of repeating the formula, look [here](https://github.com/meyercm/masterbuilt_controller/blob/master/src/main.cpp#L43).
 
 The derivation so far only has a handful of datapoints, and if I had to guess, would say that the effective cooking temp is actually below this reading (my calibration was done with a meat thermometer stuck in the smoke exhaust.
+
 
